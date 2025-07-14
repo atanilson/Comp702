@@ -5,6 +5,7 @@ import torch
 from torch import nn
 from tqdm.auto import tqdm
 from typing import Dict, List
+import numpy as np
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
@@ -84,7 +85,7 @@ def test_step(model: torch.nn.Module,
   test_acc /= len(dataloader)
   return test_loss, test_acc
 
-def Train(model: torch.nn.Module,
+def train(model: torch.nn.Module,
           train_dataloader: torch.utils.data.DataLoader,
           test_dataloader: torch.utils.data.DataLoader,
           optimizer: torch.optim.Optimizer,
