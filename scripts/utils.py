@@ -6,6 +6,8 @@ from pathlib import Path
 from typing import Tuple, Dict, List
 import pandas as pd
 
+device = "cuda" if torch.cuda.is_available() else "cpu"
+
 def save_model(model: torch.nn.Module,
                target_dir: str,
                model_name: str):
