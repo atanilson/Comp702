@@ -2,8 +2,10 @@
 Contain functions to see, save and laod and so on
 """
 import torch
+import torchvision
 from pathlib import Path
 from typing import Tuple, Dict, List
+import matplotlib.pyplot as plt
 import pandas as pd
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
