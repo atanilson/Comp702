@@ -130,7 +130,8 @@ def save_results(results: Dict,
                  optimizer: str,
                  lr: str,
                  model: str,
-                 time: float
+                 time: float,
+                 dir: str=""
                  ):
   
   # Add a line in the result dictionary with time take in on cell and othres zero
@@ -140,4 +141,4 @@ def save_results(results: Dict,
   
   file_name = model+"_"+optimizer+"_"+lr+".csv"
   df = pd.DataFrame(results)
-  df.to_csv(file_name)
+  df.to_csv(dir+file_name)
