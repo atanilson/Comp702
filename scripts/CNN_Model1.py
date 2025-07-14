@@ -1,3 +1,5 @@
+import torch
+from torch import nn
 
 class CNN_Model1(nn.Module):
   """
