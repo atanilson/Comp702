@@ -2,6 +2,7 @@
 Function for training and evaluating model
 """
 import torch
+from torch import nn
 from tqdm.auto import tqdm
 from typing import Dict, List
 
@@ -84,8 +85,8 @@ def test_step(model: torch.nn.Module,
   return test_loss, test_acc
 
 def Train(model: torch.nn.Module,
-          train_datalaoder: torch.utils.data.DataLoader,
-          test_datalaoder: torch.utils.data.DataLoader,
+          train_dataloader: torch.utils.data.DataLoader,
+          test_dataloader: torch.utils.data.DataLoader,
           optimizer: torch.optim.Optimizer,
           loss_fn: torch.nn.Module = nn.CrossEntropyLoss(),
           epochs: int = 5,
@@ -103,7 +104,7 @@ def Train(model: torch.nn.Module,
   # Training loo
   for epoch in tqdm(range(epochs)):
     train_loss, train_acc = train_step(model=model,
-                                       dataloader=train_datalaoder,
+                                       dataloader=train_dataloader,
                                        loss_fn=loss_fn,
                                        optimizer=optimizer,
                                        device=device)
