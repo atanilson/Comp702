@@ -139,6 +139,6 @@ def save_results(results: Dict,
   time_col.insert(0, time)
   results["time_taken"] = time_col
   
-  file_name = model+optimizer+lr+".csv"
+  file_name = model+"_"+optimizer+"_"+lr+".csv"
   df = pd.DataFrame(results)
   df.to_csv(file_name)
