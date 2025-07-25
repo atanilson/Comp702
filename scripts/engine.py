@@ -97,6 +97,7 @@ def train(model: torch.nn.Module,
   # Creating a result dictionary to track the metrics
   best_loss = np.inf
   best_model = None
+  best_acc, best_loss = 0,0
   results = {"train_loss":[],
              "train_acc":[],
              "test_loss":[],
@@ -127,6 +128,8 @@ def train(model: torch.nn.Module,
     if test_loss < best_loss:
       best_loss = test_loss
       best_model = model
+      best_acc, best_loss = test_acc, test_loss
 
   # Return the best model as well as the  filled results dictonary
+  print(f"Finished, best loss: {best_loss:.4f}, best acc: {best_acc*100:.4f}")
   return best_model,results
