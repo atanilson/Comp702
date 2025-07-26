@@ -141,4 +141,6 @@ def save_results(results: Dict,
   
   file_name = model+"_"+optimizer+"_"+lr+".csv"
   df = pd.DataFrame(results)
-  df.to_csv(save_dir+file_name)
+  dir = save_dir+file_name
+  print(f"Saving to {dir}")
+  df.to_csv(dir)
