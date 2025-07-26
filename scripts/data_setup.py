@@ -5,7 +5,7 @@ as wee as class names)
 """
 import os, torch
 from  torchvision import datasets, transforms
-from torch.utils.data import DataLoader, random_split
+from torch.utils.data import DataLoader, random_split, Subset
 
 NUM_WORKERS = os.cpu_count()
 
