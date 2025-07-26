@@ -95,9 +95,8 @@ def train(model: torch.nn.Module,
           ):
 
   # Creating a result dictionary to track the metrics
-  best_loss = np.inf
   best_model = None
-  best_acc, best_loss = 0,0
+  best_acc, best_loss = 0,np.inf
   results = {"train_loss":[],
              "train_acc":[],
              "test_loss":[],
